@@ -13,12 +13,12 @@
 [https://docs.docker.com/install/linux/docker-ce/ubuntu/](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
 ##### Create image
-`pipenv run python setup.py`
+`pipenv run python ./src/setup.py`
 
 ##### Run node
 `docker run --net=host -it dispy`
 
 ##### Run the program
-`pipenv run python main.py <password_to_guess>`
+`pipenv run python ./src/main.py <password_to_guess>`
 
 Be careful though, the number of possibilities is like ~```40^len(password_to_guess)```
