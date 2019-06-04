@@ -1,0 +1,40 @@
+version: "2.0"
+services:
+  slave_1:
+    container_name: slave_1
+    build: .
+    entrypoint: "/usr/local/bin/dispynode.py --daemon -d --clean --name=slave_1 --cpus 1"
+    networks:
+      public:
+        ipv4_address: 10.11.220.20
+
+  slave_2:
+    container_name: slave_2
+    build: .
+    entrypoint: "/usr/local/bin/dispynode.py --daemon -d --clean --name=slave_2 --cpus 1"
+    networks:
+      public:
+        ipv4_address: 10.11.220.21
+
+  slave_3:
+    container_name: slave_3
+    build: .
+    entrypoint: "/usr/local/bin/dispynode.py --daemon -d --clean --name=slave_3 --cpus 1"
+    networks:
+      public:
+        ipv4_address: 10.11.220.22
+
+  slave_4:
+    container_name: slave_4
+    build: .
+    entrypoint: "/usr/local/bin/dispynode.py --daemon -d --clean --name=slave_4 --cpus 1"
+    networks:
+      public:
+        ipv4_address: 10.11.220.23
+
+networks:
+  public:
+    driver: "bridge"
+    ipam:
+      config:
+        - subnet: 10.11.220.1/24
